@@ -9,7 +9,12 @@ function App() {
     setCounter(counter + 1)
   }
   const removeValue = () => {
-    setCounter(counter - 1)
+    // setCounter(counter - 1)
+    if (counter > 0) {
+      setCounter(counter - 1)
+    } else {
+      alert("You can't remove value")
+    }
   }
 
   return (
@@ -25,6 +30,8 @@ function App() {
       <button
         onClick={removeValue}
       >Remove value</button>
+
+      <p>footer: {counter} </p>
 
     </>
   )
